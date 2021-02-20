@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Weather</string>
+
+    <string name="unknown_details">Unknown city/country details</string>
+    <string name="city_hint">City:</string>
+    <string name="country_hint">Country:</string>
+    <string name="get_location_weather">Get location weather</string>
+    <string name="fill_in_with_correct_data">Please fill in with valid data</string>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        tools:context=".ui.fragments.EntryPointFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/countryTextInputWrapper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/BU6"
+            android:layout_marginEnd="@dimen/BU6"
+            android:layout_marginBottom="@dimen/BU3"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/cityTextInputWrapper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/countryTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/country_hint"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/cityTextInput"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/extra_small" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cityTextInputWrapper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/BU6"
+            android:layout_marginTop="@dimen/BU3"
+            android:layout_marginEnd="@dimen/BU6"
+            android:layout_marginBottom="@dimen/BU4"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/getLocationWeatherButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countryTextInputWrapper">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@id/cityTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/city_hint"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/extra_small" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/circularProgress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="@dimen/progress"
+            android:layout_height="@dimen/progress"
+            android:elevation="@dimen/BU3"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/grey"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/getLocationWeatherButton"
+            app:layout_constraintEnd_toEndOf="@+id/getLocationWeatherButton"
+            app:layout_constraintStart_toStartOf="@+id/getLocationWeatherButton"
+            app:layout_constraintTop_toTopOf="@+id/getLocationWeatherButton" />
+
+        <Button
+            android:id="@+id/getLocationWeatherButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/BU6"
+            android:paddingHorizontal="@dimen/BU6"
+            android:paddingVertical="@dimen/BU5"
+            android:text="@string/get_location_weather"
+            android:textSize="@dimen/extra_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cityTextInputWrapper" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

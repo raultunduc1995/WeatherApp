@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.weatherapp"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField("String", "GEOCODER_API", "\"https://api.opencagedata.com/\"")
+            buildConfigField("String", "GEOCODER_API_KEY", "\"0b466c07cf144e99858b4e0ee04377da\"")
+            buildConfigField("String", "DARK_SKY_API", "\"https://api.darksky.net/\"")
+            buildConfigField("String", "DARK_SKY_API_KEY", "\"283f68ffdba89a79ef4c8ec55d4c19d7\"")
+        }
+
+        release {
+            buildConfigField("String", "GEOCODER_API", "\"https://api.opencagedata.com/\"")
+            buildConfigField("String", "GEOCODER_API_KEY", "\"0b466c07cf144e99858b4e0ee04377da\"")
+            buildConfigField("String", "DARK_SKY_API", "\"https://api.darksky.net/\"")
+            buildConfigField("String", "DARK_SKY_API_KEY", "\"283f68ffdba89a79ef4c8ec55d4c19d7\"")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        test {
+            resources.srcDirs += ["src/test/res"]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.google.android.material:material:$android_material_version"
+    implementation "androidx.recyclerview:recyclerview:$recycleview_version"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version") {
+        exclude module: 'okhttp'
+    }
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+}

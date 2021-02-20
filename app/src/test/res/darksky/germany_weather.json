@@ -1,0 +1,11 @@
+{
+  "latitude": 50.977435,
+  "longitude": 11.3292894,
+  "timezone": "Europe/Berlin",
+  "currently": {
+    "time": 1582975703,
+    "summary": "Overcast",
+    "icon": "cloudy",
+    "temperature": 11.03
+  }
+}

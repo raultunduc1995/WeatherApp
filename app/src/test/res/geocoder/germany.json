@@ -1,0 +1,35 @@
+{
+   "results" : [
+      {
+         "components" : {
+            "ISO_3166-1_alpha-2" : "DE",
+            "ISO_3166-1_alpha-3" : "DEU",
+            "_category" : "outdoors/recreation",
+            "_type" : "museum",
+            "city" : "Weimar",
+            "continent" : "Europe",
+            "country" : "Germany",
+            "country_code" : "de",
+            "county" : "Weimar",
+            "house_number" : "1",
+            "museum" : "Goethe-National-Museum/Goethes Wohnhaus",
+            "pedestrian" : "Frauenplan",
+            "political_union" : "European Union",
+            "postcode" : "99423",
+            "state" : "Thuringia",
+            "suburb" : "Altstadt",
+            "town" : "Weimar"
+         },
+         "confidence" : 9,
+         "formatted" : "Goethe-National-Museum/Goethes Wohnhaus, Frauenplan 1, 99423 Weimar, Germany",
+         "geometry" : {
+            "lat" : 50.977435,
+            "lng" : 11.3292894
+         }
+      }
+   ],
+   "status" : {
+      "code" : 200,
+      "message" : "OK"
+   }
+}
